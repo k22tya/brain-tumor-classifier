@@ -1,14 +1,16 @@
-# trigger rebuild
 # app.py
 import streamlit as st
-import tensorflow as tf
 import numpy as np
 from PIL import Image
 
-# Load the trained model
-model = tf.keras.models.load_model('tumor_classifier_model.h5')
+# Dummy model for testing (replace this later with your real model)
+class DummyModel:
+    def predict(self, x):
+        return [[0.1, 0.2, 0.3, 0.4]]  # Fake prediction output
 
-# Define class names (must match training order!)
+model = DummyModel()
+
+# Define class names (must match real model training order)
 class_names = ['Glioma', 'Meningioma', 'No Tumor', 'Pituitary']
 
 # App title
